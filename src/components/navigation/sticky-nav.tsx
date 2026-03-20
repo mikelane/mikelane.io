@@ -64,6 +64,7 @@ export function StickyNav() {
     <AnimatePresence>
       {visible && (
         <motion.nav
+          aria-label="Main navigation"
           initial={{ y: -64, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: -64, opacity: 0 }}

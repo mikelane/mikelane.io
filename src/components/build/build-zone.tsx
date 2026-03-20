@@ -38,9 +38,9 @@ const TerminalDemo = dynamic(
 
 export function BuildZone() {
   return (
-    <section id="build" className="px-6 py-24 md:py-32">
+    <section id="build" aria-labelledby="build-heading" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
+        <h2 id="build-heading" className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
           What I Build
         </h2>
         <p className="mt-2 text-3xl font-medium tracking-tight md:text-4xl">

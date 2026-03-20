@@ -1,10 +1,14 @@
+import Link from "next/link";
 import { thinkCards } from "@/lib/content";
 
 export function ThinkZone() {
   return (
-    <section id="think" className="px-6 py-24 md:py-32">
+    <section id="think" aria-labelledby="think-heading" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
+        <h2
+          id="think-heading"
+          className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase"
+        >
           What I Think
         </h2>
         <p className="mt-2 text-3xl font-medium tracking-tight md:text-4xl">
@@ -37,6 +41,28 @@ export function ThinkZone() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-8 text-center">
+          <Link
+            href="/blog"
+            className="inline-flex items-center gap-2 font-mono text-sm text-[var(--color-muted)] transition-colors duration-200 hover:text-[var(--color-accent)]"
+          >
+            View all posts
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M6 4l4 4-4 4" />
+            </svg>
+          </Link>
         </div>
       </div>
     </section>
