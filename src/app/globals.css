@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  --color-background: #0a0a0a;
+  --color-foreground: #fafafa;
+  --color-muted: #a1a1aa;
+  --color-accent: #f59e0b;
+  --color-card-border: rgba(255, 255, 255, 0.08);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+}
