@@ -1,15 +1,19 @@
+import { Hero } from "@/components/hero/hero";
+import { StickyNav } from "@/components/navigation/sticky-nav";
+import { BuildZone } from "@/components/build/build-zone";
+import { LeadZone } from "@/components/lead/lead-zone";
+import { ThinkZone } from "@/components/think/think-zone";
+import { ContactFooter } from "@/components/contact/contact-footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center">
-      <h1 className="text-5xl font-medium tracking-[-0.04em]">
-        Michael Lane
-      </h1>
-      <p className="mt-4 text-lg text-[var(--color-muted)]">
-        The Workshop — coming soon
-      </p>
-      <p className="mt-2 font-mono text-sm text-[var(--color-muted)]">
-        mikelane.io
-      </p>
+    <main>
+      <Hero />
+      <StickyNav />
+      <BuildZone />
+      <LeadZone />
+      <ThinkZone />
+      <ContactFooter />
     </main>
   );
 }
