@@ -1,4 +1,40 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import { buildCards } from "@/lib/content";
+import { ProjectCard } from "./project-card";
+
+const MCPDiagram = dynamic(
+  () => import("./mcp-diagram").then((m) => ({ default: m.MCPDiagram })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[380px] animate-pulse rounded-lg bg-white/[0.04]" />
+    ),
+  },
+);
+
+const ThroughputViz = dynamic(
+  () =>
+    import("./throughput-viz").then((m) => ({ default: m.ThroughputViz })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[300px] animate-pulse rounded-lg bg-white/[0.04]" />
+    ),
+  },
+);
+
+const TerminalDemo = dynamic(
+  () =>
+    import("./terminal-demo").then((m) => ({ default: m.TerminalDemo })),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-[300px] animate-pulse rounded-lg bg-white/[0.04]" />
+    ),
+  },
+);
 
 export function BuildZone() {
   return (
@@ -11,37 +47,38 @@ export function BuildZone() {
           Systems that scale, tools that simplify
         </p>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {buildCards.map((card) => (
-            <article
-              key={card.title}
-              className="group rounded-xl border border-white/[0.08] p-6 transition-colors duration-300 hover:border-white/[0.16] hover:bg-white/[0.02]"
+        <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {/* MCP Diagram — full width on first row */}
+          <div className="md:col-span-2">
+            <ProjectCard
+              title={buildCards[0].title}
+              description={buildCards[0].description}
+              metric={buildCards[0].metric}
+              stack={buildCards[0].stack}
             >
-              <h3 className="text-lg font-medium tracking-tight">
-                {card.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-[var(--color-muted)]">
-                {card.description}
-              </p>
+              <MCPDiagram />
+            </ProjectCard>
+          </div>
 
-              <div className="mt-4 inline-flex items-center rounded-full border border-[var(--color-accent)]/20 bg-[var(--color-accent)]/10 px-3 py-1">
-                <span className="font-mono text-xs text-[var(--color-accent)]">
-                  {card.metric}
-                </span>
-              </div>
+          {/* Throughput viz */}
+          <ProjectCard
+            title={buildCards[1].title}
+            description={buildCards[1].description}
+            metric={buildCards[1].metric}
+            stack={buildCards[1].stack}
+          >
+            <ThroughputViz />
+          </ProjectCard>
 
-              <div className="mt-4 flex flex-wrap gap-2">
-                {card.stack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-md bg-white/[0.06] px-2 py-0.5 font-mono text-xs text-[var(--color-muted)]"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
+          {/* Terminal demo */}
+          <ProjectCard
+            title={buildCards[2].title}
+            description={buildCards[2].description}
+            metric={buildCards[2].metric}
+            stack={buildCards[2].stack}
+          >
+            <TerminalDemo />
+          </ProjectCard>
         </div>
       </div>
     </section>
