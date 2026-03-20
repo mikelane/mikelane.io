@@ -55,9 +55,9 @@ const iconMap: Record<string, React.FC> = {
 
 export function ContactFooter() {
   return (
-    <footer id="contact" className="border-t border-white/[0.08] px-6 py-24 md:py-32">
+    <footer id="contact" aria-labelledby="contact-heading" className="border-t border-white/[0.08] px-6 py-24 md:py-32">
       <div className="mx-auto max-w-2xl text-center">
-        <h2 className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
+        <h2 id="contact-heading" className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
           Get in Touch
         </h2>
         <p className="mt-4 text-lg leading-relaxed text-[var(--color-muted)]">

@@ -1,19 +1,13 @@
 import { Hero } from "@/components/hero/hero";
 import { StickyNav } from "@/components/navigation/sticky-nav";
-import { BuildZone } from "@/components/build/build-zone";
-import { LeadZone } from "@/components/lead/lead-zone";
-import { ThinkZone } from "@/components/think/think-zone";
-import { ContactFooter } from "@/components/contact/contact-footer";
+import { AnimatedSections } from "@/components/shared/animated-sections";
 
 export default function Home() {
   return (
-    <main>
+    <main id="main-content">
       <Hero />
       <StickyNav />
-      <BuildZone />
-      <LeadZone />
-      <ThinkZone />
-      <ContactFooter />
+      <AnimatedSections />
     </main>
   );
 }

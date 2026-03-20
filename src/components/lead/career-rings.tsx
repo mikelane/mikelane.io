@@ -16,6 +16,7 @@ function RingCard({
   return (
     <motion.button
       onClick={onToggle}
+      aria-expanded={isExpanded}
       className={`w-full cursor-pointer rounded-2xl border p-6 text-left transition-colors duration-300 ${
         isExpanded
           ? "border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.03]"
@@ -114,6 +115,7 @@ function ConcentricRings({
             <motion.button
               key={ring.level}
               onClick={() => onToggle(originalIndex)}
+              aria-expanded={isExpanded}
               className={`${i > 0 ? "absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" : "relative"} cursor-pointer rounded-2xl border text-left transition-colors duration-300 ${paddings[i]} ${sizes[i]} ${
                 isExpanded
                   ? "z-30 border-[var(--color-accent)]/40 bg-[var(--color-accent)]/[0.03]"

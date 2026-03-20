@@ -3,9 +3,9 @@ import { CareerRings } from "./career-rings";
 
 export function LeadZone() {
   return (
-    <section id="lead" className="px-6 py-24 md:py-32">
+    <section id="lead" aria-labelledby="lead-heading" className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-6xl">
-        <h2 className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
+        <h2 id="lead-heading" className="font-mono text-xs tracking-widest text-[var(--color-muted)] uppercase">
           How I Lead
         </h2>
         <p className="mt-2 text-3xl font-medium tracking-tight md:text-4xl">

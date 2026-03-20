@@ -109,7 +109,7 @@ export function TerminalDemo() {
   }, [phase, reset, runSequence, cleanup]);
 
   return (
-    <div ref={containerRef} className="overflow-hidden rounded-lg">
+    <div ref={containerRef} className="overflow-hidden rounded-lg" aria-label="Terminal demonstration" role="presentation">
       {/* Window chrome */}
       <div className="flex items-center gap-2 bg-[#1a1a1a] px-4 py-2.5">
         <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />
